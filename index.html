@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ミリシタVroid</title>
+</head>
+<body>
+<h1>ミリシタVroid</h1>
+<p>ミリシタのアイドルのVRMモデルを作ってみました。</p>
+<div id="download_table"></div>
+<ul>利用上の注意
+	<li>モデルの素体には、月森イズミさんによる「<a href="https://booth.pm/ja/items/2406547">ヴィヴィ アニメ風モデル</a>」を使用しています。</li>
+	<li>再配布は禁止とします。</li>
+	<li>キャラクターモデルはバンダイナムコエンターテインメント社が権利を所有する「アイドルマスターミリオンライブシアターデイズ」を元にしたものです。同社の権利を侵害しない利用を心がけてください。</li>
+</ul>
+<script>
+const idols = ['yuriko', 'makoto', 'fuka', 'roco'];
+const rows = ['image', 'link'];
+let html = '';
+
+let html_img = '';
+let html_link = '';
+for (let idol of idols){
+	html_img += `<td align="center"><a href="${idol}.vrm"><img src="${idol}.jpg" height="300"></a></td>`;
+	html_link += `<td align="center"><a href="${idol}.vrm">ダウンロード</a></td>`;
+}
+
+html = `
+<table>
+	<tr>${html_img}</tr>
+	<tr>${html_link}</tr>
+</table>
+`;
+document.getElementById('download_table').innerHTML = html;
+
+
+</script>
+</body>
+</html>
